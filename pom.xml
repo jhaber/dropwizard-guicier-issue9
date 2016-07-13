@@ -13,7 +13,8 @@
   <version>0.1-SNAPSHOT</version>
 
   <properties>
-    <basepom.shaded.main-class>com.hubspot.dropwizard.example.ExampleApplication</basepom.shaded.main-class>
+    <basepom.shaded.main-class>com.hubspot.dropwizard.issue9.App</basepom.shaded.main-class>
+    <basepom.check.fail-findbugs>false</basepom.check.fail-findbugs>
   </properties>
 
   <dependencyManagement>
@@ -22,6 +23,11 @@
         <groupId>com.hubspot.dropwizard</groupId>
         <artifactId>dropwizard-guicier</artifactId>
         <version>1.0.0.1</version>
+      </dependency>
+      <dependency>
+        <groupId>io.dropwizard.metrics</groupId>
+        <artifactId>metrics-annotation</artifactId>
+        <version>3.1.2</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -36,28 +42,12 @@
       <artifactId>javax.ws.rs-api</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-    </dependency>
-    <dependency>
       <groupId>io.dropwizard</groupId>
       <artifactId>dropwizard-core</artifactId>
     </dependency>
     <dependency>
-      <groupId>io.dropwizard</groupId>
-      <artifactId>dropwizard-lifecycle</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.dropwizard</groupId>
-      <artifactId>dropwizard-servlets</artifactId>
-    </dependency>
-    <dependency>
       <groupId>io.dropwizard.metrics</groupId>
-      <artifactId>metrics-healthchecks</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.eclipse.jetty</groupId>
-      <artifactId>jetty-server</artifactId>
+      <artifactId>metrics-annotation</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.inject</groupId>
@@ -70,10 +60,6 @@
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-annotations</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
     </dependency>
   </dependencies>
 </project>
